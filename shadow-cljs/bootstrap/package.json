@@ -1,5 +1,5 @@
 {
-  "name": "shadow-cljs/bootstrap",
+  "name": "shadow-cljs-bootstrap",
   "version": "0.0.1",
   "main": "index.js",
   "description": "ShadowCLJS搭建全栈Clojure(Script)应用开发环境",
