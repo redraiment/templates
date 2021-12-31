@@ -2,7 +2,7 @@
  :nrepl {:port 9999
          :init-fn me.zzp.web.core}
  :dev-http {3000 {:root "resources/statics"
-                  :handler me.zzp.web.core/handler}}
+                  :handler me.zzp.web.core/routes}}
  :builds {:app {:target :browser
                 :output-dir "resources/statics/js"
                 :asset-path "/js"
