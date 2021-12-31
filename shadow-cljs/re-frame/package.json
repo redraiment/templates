@@ -1,0 +1,31 @@
+{
+  "name": "shadow-cljs-re-frame",
+  "version": "0.0.1",
+  "main": "index.js",
+  "description": "基于re-frame的全栈开发框架",
+  "author": "redraiment <redraiment@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.45.2",
+    "shadow-cljs": "^2.16.10"
+  },
+  "scripts": {
+    "watch:scss": "sass -w resources/META-INF/scss/main.scss resources/statics/css/main.css",
+    "watch:cljs": "shadow-cljs watch app",
+    "start": "npm-run-all --parallel watch:scss watch:cljs",
+    "clean:statics": "rm -rf resources/statics/js resources/statics/css",
+    "clean:clj": "lein clean",
+    "clean": "npm-run-all --parallel clean:statics clean:clj",
+    "build:scss": "sass -s compressed resources/META-INF/scss/main.scss resources/statics/css/main.css",
+    "build:cljs": "shadow-cljs release app",
+    "build:clj": "lein uberjar",
+    "build": "npm-run-all build:scss build:cljs build:clj",
+    "release": "npm-run-all clean build"
+  }
+}
