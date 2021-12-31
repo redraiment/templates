@@ -1,0 +1,10 @@
+{:source-paths ["src"]
+ :dependencies [[reagent "1.1.0" :exclusions [cljsjs/react cljsjs/react-dom]]
+                [cider/cider-nrepl "0.27.2"]]
+ :nrepl {:port 9999
+         :init-fn me.zzp.web.core}
+ :dev-http {3000 {:root "public"
+                  :handler me.zzp.web.core/handler}}
+ :builds {:app {:target :browser
+                :asset-path "/"
+                :modules {:main {:init-fn me.zzp.www.core/init}}}}}

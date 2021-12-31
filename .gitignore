@@ -1,2 +1,5 @@
+.shadow-cljs/
 node_modules/
+dist/
+js/
 yarn.lock
