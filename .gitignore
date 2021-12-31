@@ -1,5 +1,11 @@
 .shadow-cljs/
 node_modules/
+target/
 dist/
 js/
+css/
+
 yarn.lock
+yarn-error.log
+
+*.log

@@ -1,0 +1,9 @@
+{:lein {:profile "+cljs"}
+ :nrepl {:port 9999
+         :init-fn me.zzp.web.core}
+ :dev-http {3000 {:root "resources/statics"
+                  :handler me.zzp.web.core/handler}}
+ :builds {:app {:target :browser
+                :output-dir "resources/statics/js"
+                :asset-path "/js"
+                :modules {:main {:init-fn me.zzp.www.core/init}}}}}
