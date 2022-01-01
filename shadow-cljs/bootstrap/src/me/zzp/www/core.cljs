@@ -5,7 +5,7 @@
 
 (defn Viewport
   []
-  [:h1 "Hello from Client"])
+  [:h1 "Hello ClojureScript"])
 
 (defn ^:dev/after-load render
   []

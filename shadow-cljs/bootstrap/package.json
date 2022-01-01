@@ -2,7 +2,7 @@
   "name": "shadow-cljs-bootstrap",
   "version": "0.0.1",
   "main": "index.js",
-  "description": "ShadowCLJS搭建全栈Clojure(Script)应用开发环境",
+  "description": "ShadowCLJS搭建ClojureScript前端应用开发环境",
   "author": "redraiment <redraiment@gmail.com>",
   "license": "MIT",
   "private": true,
