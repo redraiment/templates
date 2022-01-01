@@ -71,4 +71,9 @@
 (defn ^:dev/before-load reset
   []
   (println "reset")
+  #_(fr/clear-cofx)
+  #_(fr/clear-event)
+  #_(fr/clear-fx)
+  #_(fr/clear-sub)
+  #_(fr/clear-global-interceptor)
   (fr/clear-subscription-cache!))
