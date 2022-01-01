@@ -8,7 +8,8 @@
 
 (defn Viewport
   []
-  [:h1 "Hello from Client"
+  [:<>
+   [:h1 "Shadow-cljs with Leiningen"]
    [:p (if @user-name
          (str "Hello " @user-name)
          (str "Loading"))]])

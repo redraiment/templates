@@ -13,7 +13,8 @@
             [ring.middleware
              [content-type :refer [wrap-content-type]]
              [head :refer [wrap-head]]
-             [json :refer [wrap-json-body]]
+             [json :refer [wrap-json-body
+                           wrap-json-response]]
              [keyword-params :refer [wrap-keyword-params]]
              [multipart-params :refer [wrap-multipart-params]]
              [nested-params :refer [wrap-nested-params]]
@@ -24,9 +25,7 @@
 
 (defn handler
   [request]
-  {:status 200
-   :headers {"Content-Type" "application/json"}
-   :body "{\"name\":\"Joe\"}"})
+  (response {:name "Joe"}))
 
 (defonce static-resource-path "statics")
 
@@ -42,8 +41,10 @@
 
 (def routes
   (-> handler
+    wrap-json-response
     (wrap-json-body {:keywords? true})
     wrap-multipart-params
+    wrap-keyword-params
     wrap-nested-params
     wrap-params
     (wrap-home-page "/index.html")
